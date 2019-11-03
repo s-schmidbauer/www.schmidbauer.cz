@@ -28,8 +28,10 @@ We're offering you high quality IT services Czechia.
 - Passes all checks on MXtoolbox Email service test: https://mxtoolbox.com
 
 ## Contact
+
 Contact us for any request with Email, Web or else.
+
 - Email: stefan@schmidbauer.cz
 - Phone: +420..
-- I only speak German and English at the moment.
-- Contact anna@schmidbauer.cz for Czech please
+- I only speak German and English at the moment
+- Contact Anna at anna@schmidbauer.cz for Czech please
