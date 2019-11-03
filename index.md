@@ -32,8 +32,8 @@ Our promise. It works great. We prevent third parties from spying and misusing w
 - All services pass A grade on TLS/SSL certificate and setup: [https://ssllabs.com](https://ssllabs.com)
 - Mail authenticity marks against phishing (DMARC, DKIM and SPF)
 - Mail connection fully secured (STARTTLS and DANE)
-- Mail passes 100% score on Dutch goverment test: [https://www.internet.nl/email](https://ssllabs.com)
-- Mail passes all checks on MXtoolbox Email test: [https://mxtoolbox.com](https://ssllabs.com)
+- Mail passes 100% score on Dutch goverment test: [https://www.internet.nl/email](https://www.internet.nl/email)
+- Mail passes all checks on MXtoolbox Email test: [https://mxtoolbox.com](https://mxtoolbox.com)
 - Management passes A grade on Mozilla Observatory test: [https://observatory.mozilla.org](https://observatory.mozilla.org/analyze/mail.schmidbauer.cz#ssh)
 - Usage of secure cryptography standards throughout the stack
 
