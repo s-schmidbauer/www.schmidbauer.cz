@@ -2,6 +2,8 @@
 
 We're offering you high quality IT services in Czechia.
 
+---
+
 ## Secure Web solution
 - Control your own data, operated in Czechia 
 - Websites and blogs in WordPress, BuddyPress, Drupal and many more
@@ -19,7 +21,9 @@ We're offering you high quality IT services in Czechia.
 - Solutions based on open source and standards software
 - Hosted and operated locally
 
-### Highest standards for your data
+---
+
+## Highest standards for your data
 
 Our promise. It works great. We prevent third parties from spying and misusing what's yours.
 
@@ -32,6 +36,8 @@ Our promise. It works great. We prevent third parties from spying and misusing w
 - Mail passes all checks on MXtoolbox Email test: [https://mxtoolbox.com](https://ssllabs.com)
 - Management passes A grade on Mozilla Observatory test: [https://observatory.mozilla.org](https://observatory.mozilla.org/analyze/mail.schmidbauer.cz#ssh)
 - Usage of secure cryptography standards throughout the stack
+
+---
 
 ## Contact
 
