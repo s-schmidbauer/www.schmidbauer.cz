@@ -1,6 +1,6 @@
 # schmidbauer.cz 
 
-We're offering you high quality IT services Czechia.
+We're offering you high quality IT services in Czechia.
 
 ## Secure Web solution
 - Control your own data, operated in Czechia 
