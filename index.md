@@ -16,8 +16,13 @@ We're offering you high quality IT services in Czechia.
 - Setup any email addresses for your domain
 - Great spam blocking included
 
-## Secure management
-- Through us, for you
+## Monitoring
+- Be informed about your systems status by email
+- React on issues when needed
+- Contact our support for help
+
+## Management
+- Systems fully managed by us
 - Solutions based on open source and standards software
 - Hosted and operated locally
 
@@ -25,7 +30,9 @@ We're offering you high quality IT services in Czechia.
 
 ## Highest standards for your data
 
-Our promise. It works great. We prevent third parties from spying and misusing what's yours.
+Our promise: It works well and securly.
+
+We prevent third parties from spying and misusing what's yours.
 
 - Reachable via modern internet address (IPv6)
 - All domain names signed (DNSSEC)
@@ -39,9 +46,9 @@ Our promise. It works great. We prevent third parties from spying and misusing w
 
 ---
 
-## Contact
+## About Stefan Schmidbauer and contact
 
-Contact us for any request with Email, Web or else.
+Contact us for any request with Email, phone or else.
 
 - My name is Stefan Schmidbauer. I'm born in Prien, Bavaria in Germany. 
 - I have 15+ years experience in IT with a wide range of customers.
