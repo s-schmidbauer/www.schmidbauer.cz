@@ -18,6 +18,7 @@ We're offering you high quality IT services in Czechia.
 
 ## Monitoring
 - Be informed about your systems status by email
+- Receive status reports and recommendations
 - React on issues when needed
 - Contact our support for help
 
