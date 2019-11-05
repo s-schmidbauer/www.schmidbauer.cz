@@ -1,20 +1,35 @@
+<head>
+<title>schmidbauer.cz</title>
+<link rel="stylesheet" href="openbsd.css">
+</head>
+
 # schmidbauer.cz 
 
 We're offering you high quality IT services in Czechia.
 
 ---
 
+## Secure Cloud solution
+- Safe haven for all your images, documents and other documents 
+- Access from your Browser or iPhone/Android phone
+- Control your own data, operated in Czechia
+- Based on [nextcloud](https://nextcloud.com)
+- Setup any domain and service for your domain
+- Including free TLS/SSL certificate!
+
 ## Secure Web solution
-- Control your own data, operated in Czechia 
 - Websites and blogs in WordPress, BuddyPress, Drupal and many more
+- Control your own data, operated in Czechia 
 - Setup any domain and service for your domain
 - Including free TLS/SSL certificate!
 
 ## Secure E-Mail solution
+- Access mails and calender in your browser and phone
 - Control your own data, operated in Czechia 
 - Access everything in your browser and phone
 - Setup any email addresses for your domain
 - Great spam blocking included
+- Including free TLS/SSL certificate!
 
 ## Monitoring
 - Be informed about your systems status by email
@@ -25,7 +40,7 @@ We're offering you high quality IT services in Czechia.
 ## Management
 - Systems fully managed by us
 - Solutions based on open source and standards software
-- Hosted and operated locally
+- Hosted and operated in Czechia
 
 ---
 
