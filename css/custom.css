@@ -1,5 +1,9 @@
 /* Shared
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  background-image: url("../images/absurdity.png");
+}
+
 .button {
   border-radius: 100px;
 }
@@ -36,6 +40,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .services {
   color: #0072BC;
+  background-color: powderblue;
   padding-bottom: 5rem;
 }
 
@@ -53,7 +58,6 @@
 /* Security
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .security {
-  background-color: powderblue;
   color: #0072BC;
 }
 .security-description {
@@ -62,6 +66,11 @@
 
 /* Contact
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact {
+  color: #0072BC;
+  background-color: powderblue;
+
+}
 
 .contact-description {
   margin-bottom: 4rem;
