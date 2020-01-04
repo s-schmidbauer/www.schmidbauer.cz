@@ -5,6 +5,7 @@ body {
 }
 
 .button {
+  background-color: white;
   border-radius: 100px;
 }
 
@@ -130,7 +131,6 @@ body {
     color: #0072BC; }
   .navbar-link-special.active {
     color: #33C3F0; }
-
   .has-docked-nav .navbar {
     position: fixed;
     top: 0;
