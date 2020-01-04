@@ -2,6 +2,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body {
   background-image: url("../images/absurdity.png");
+  text-align: center;
 }
 
 .button {
@@ -20,6 +21,15 @@ body {
   margin-bottom: 1.2rem;
 }
 
+.section-small {
+  padding: 6rem 0 2rem;
+  text-align: center;
+}
+.section-small-heading,
+.section-small-description {
+  margin-bottom: 1.2rem;
+}
+
 /* Navigation
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .intro {
@@ -28,7 +38,13 @@ body {
 }
 
 .intro-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-small {
+  color: #000;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 /* Navigation
