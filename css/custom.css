@@ -5,7 +5,7 @@ body {
   text-align: center;
 }
 
-.button {
+button {
   background-color: white;
   border-radius: 100px;
 }
