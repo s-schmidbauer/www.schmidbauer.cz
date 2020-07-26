@@ -125,6 +125,10 @@ button {
     position: relative;
     float: right;
     margin-bottom: 0; }
+  .navbar-item-lang {
+    position: relative;
+    float: right;
+    margin-bottom: 0; }
   .navbar-link {
     text-transform: uppercase;
     font-size: 11px;
@@ -146,6 +150,17 @@ button {
     line-height: 6.5rem;
     color: #0072BC; }
   .navbar-link-special.active {
+    color: #33C3F0; }
+  .navbar-link-lang {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .2rem;
+    margin-right: 25px;
+    text-decoration: none;
+    line-height: 6.5rem;
+    color: #666; }
+  .navbar-link-lang.active {
     color: #33C3F0; }
   .has-docked-nav .navbar {
     position: fixed;
