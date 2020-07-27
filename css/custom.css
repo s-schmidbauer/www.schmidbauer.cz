@@ -70,6 +70,8 @@ button {
 }
 .services-security {
   list-style-type: none;
+  text-align: left;
+  padding-left: 33%;
 }
 
 /* Security
