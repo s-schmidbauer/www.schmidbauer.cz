@@ -157,17 +157,6 @@ a {
     color: #0072BC; }
   .navbar-link-special.active {
     color: #33C3F0; }
-  .navbar-link-status {
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: .2rem;
-    margin-right: 35px;
-    text-decoration: none;
-    line-height: 6.5rem;
-    color: #339966; }
-  .navbar-link-status.active {
-    color: #339966; }
   .navbar-link-lang {
     text-transform: uppercase;
     font-size: 11px;
