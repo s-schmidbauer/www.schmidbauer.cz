@@ -1,7 +1,6 @@
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  Referrer-Policy: no-referrer
 /images/*
   Access-Control-Allow-Origin: *
 /css/*
