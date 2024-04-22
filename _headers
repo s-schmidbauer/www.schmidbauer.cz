@@ -2,7 +2,7 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=63072000
-  Content-Security-Policy: default-src 'self'; img-src 'self'; object-src 'none'; style-src 'self'
+  Content-Security-Policy: default-src 'self'; img-src 'self'; object-src 'none'; style-src '*'
   Referrer-Policy: same-origin
 /images/*
   Access-Control-Allow-Origin: *
