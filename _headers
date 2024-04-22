@@ -1,6 +1,7 @@
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=63072000
   Content-Security-Policy: default-src 'self'; img-src 'self'; object-src 'none'
   Referrer-Policy: same-origin
 /images/*
