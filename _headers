@@ -1,6 +1,8 @@
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
+  Content-Security-Policy: default-src 'self'; img-src 'self'; object-src 'none'
+  Referrer-Policy: same-origin
 /images/*
   Access-Control-Allow-Origin: *
 /css/*
