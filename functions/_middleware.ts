@@ -22,6 +22,28 @@ export const onRequest: PagesFunction = async (context) => {
 // redirect default fetch based on country
 export default {
   async fetch(request) {
+
+    # MTA-STS handling
+    const url = new URL(request.url);
+    const { pathname, search } = url;
+    const mtaVersion = "STSv1";
+    const mtaMode = "testing";
+    const mtaMX1 = "mail1.schmidbauer.cz"
+    const mtaMX2 = "mail2.schmidbauer.cz"
+    const mtaMaxAge = 604800
+    const mtasts = `version: ${mtaVersion}\nmode: ${mtaMode}\nmx: ${mtaMX1}\nmx: ${mtaMX2}\nmax_age: ${mtaMaxAge}\n`;
+
+    const allowed_paths = ["/.well-known/mta-sts.txt"];
+
+    if (allowed_paths.includes(pathname)) {
+      return new Response(mtasts, {
+        status: 200,
+        headers: {
+          Allow: "GET",
+        },
+      });
+    } 
+
     /**
      * A map of the URLs to redirect to
      * @param {Object} countryMap
