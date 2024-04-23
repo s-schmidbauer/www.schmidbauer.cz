@@ -49,7 +49,7 @@ export const onRequest: PagesFunction = async (context) => {
     // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
     const country = request.cf.country;
 
-    if (country != null && country in countryMap) {
+    if (country != null && country in countryMap && request.path === "/") {
       const url = countryMap[country];
       return Response.redirect(url);
     }
