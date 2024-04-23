@@ -18,23 +18,6 @@ export const onRequest: PagesFunction = async (context) => {
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Max-Age', '86400');
 
-    // redirect based on country in CF object
-    const countryMap = {
-      DE: "https://www.schmidbauer.cz/de/",
-      AT: "https://www.schmidbauer.cz/de/",
-      CH: "https://www.schmidbauer.cz/de/",
-      CZ: "https://www.schmidbauer.cz/cz/",
-    };
-
-    // Use the cf object to obtain the country of the request
-    // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
-    const country = request.cf.country;
-
-    if (country != null && country in countryMap) {
-      const url = countryMap[country];
-      return Response.redirect(url);
-    } 
-
     // MTA-STS handling
     const url = new URL(request.url);
     const { pathname, search } = url;
@@ -52,6 +35,23 @@ export const onRequest: PagesFunction = async (context) => {
           Allow: "GET",
         },
       });
+    }
+
+    // redirect based on country in CF object
+    const countryMap = {
+      DE: "https://www.schmidbauer.cz/de/",
+      AT: "https://www.schmidbauer.cz/de/",
+      CH: "https://www.schmidbauer.cz/de/",
+      CZ: "https://www.schmidbauer.cz/cz/",
+    };
+
+    // Use the cf object to obtain the country of the request
+    // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
+    const country = request.cf.country;
+
+    if (country != null && country in countryMap) {
+      const url = countryMap[country];
+      return Response.redirect(url);
     }
 
   // .. or return a response
