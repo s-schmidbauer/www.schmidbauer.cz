@@ -23,7 +23,7 @@ export const onRequest: PagesFunction = async (context) => {
 export default {
   async fetch(request) {
 
-    # MTA-STS handling
+    // MTA-STS handling
     const url = new URL(request.url);
     const { pathname, search } = url;
     const mtaVersion = "STSv1";
