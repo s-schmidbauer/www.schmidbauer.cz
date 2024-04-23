@@ -12,7 +12,7 @@ export const onRequestOptions: PagesFunction = async () => {
 };
 
 // Set CORS to all /api responses
-export const onRequest: PagesFunction = async (context) => {
+export const onRequest: PagesFunction = async (context, request) => {
   const response = await context.next();
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Max-Age', '86400');
