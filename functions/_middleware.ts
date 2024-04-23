@@ -33,9 +33,7 @@ export default {
     const mtaMaxAge = 604800
     const mtasts = `version: ${mtaVersion}\nmode: ${mtaMode}\nmx: ${mtaMX1}\nmx: ${mtaMX2}\nmax_age: ${mtaMaxAge}\n`;
 
-    const allowed_paths = ["/.well-known/mta-sts.txt"];
-
-    if (allowed_paths.includes(pathname)) {
+    if (pathname === "/.well-known/mta-sts.txt") {
       return new Response(mtasts, {
         status: 200,
         headers: {
