@@ -45,10 +45,18 @@ export const onRequest: PagesFunction = async (context) => {
       CZ: "https://www.schmidbauer.cz/cz/",
     };
 
+    // block based on country in CF object
+    const countryBlockList = [CN];
+
     // Use the cf object to obtain the country of the request
     // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
     const country = request.cf.country;
-    console.log(request.cf);
+
+    if (country != null && country in countryBlockList) {
+      return new Response(null, {
+        status: 403
+      });
+    }
 
     if (country != null && country in countryMap && pathname === "/en/") {
       const url = countryMap[country];
