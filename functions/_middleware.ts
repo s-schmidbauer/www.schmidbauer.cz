@@ -46,7 +46,7 @@ export const onRequest: PagesFunction = async (context) => {
     };
 
     // block based on country in CF object
-    const countryBlockList = [CN];
+    const countryBlockList = ['CN'];
 
     // Use the cf object to obtain the country of the request
     // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
