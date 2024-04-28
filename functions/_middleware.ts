@@ -11,6 +11,14 @@ export const onRequestOptions: PagesFunction = async () => {
   });
 };
 
+export async function fetchData(url: string): Promise<string> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('an error occurred: ' + response.statusText);
+  }
+  return await response.json();
+}
+
 // Set CORS to all responses
 export const onRequest: PagesFunction = async (context) => {
   const response = await context.next();
@@ -36,6 +44,8 @@ export const onRequest: PagesFunction = async (context) => {
         },
       });
     }
+
+    fetchData("https://red-brook-2a68.schmidbauer.workers.dev");
 
     // redirect based on country in CF object
     const countryMap = {
