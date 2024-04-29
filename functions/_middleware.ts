@@ -68,7 +68,7 @@ export const onRequest: PagesFunction = async (context) => {
       });
     }
 
-    if (country != null && country in countryMap && pathname != "/") {
+    if (country != null && country in countryMap && pathname !== "/") {
       const url = countryMap[country];
       return Response.redirect(request.url + url);
     }
