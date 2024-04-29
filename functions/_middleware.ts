@@ -49,10 +49,10 @@ export const onRequest: PagesFunction = async (context) => {
 
     // redirect based on country in CF object
     const countryMap = {
-      DE: "de",
-      AT: "de",
-      CH: "de",
-      CZ: "cz",
+      DE: "./de",
+      AT: "./de",
+      CH: "./de",
+      CZ: "./cz",
     };
 
     // block based on country in CF object
