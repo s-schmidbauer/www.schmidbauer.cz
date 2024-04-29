@@ -68,10 +68,12 @@ export const onRequest: PagesFunction = async (context) => {
       });
     }
 
-    if (country != null && country in countryMap && pathname === "/en/") {
+    if (country != null && country in countryMap) {
       const url = countryMap[country];
       return Response.redirect(request.url + url);
     }
+    else 
+      return Response.redirect(request.url + '/en');
 
   // .. or return a response
   return response;
