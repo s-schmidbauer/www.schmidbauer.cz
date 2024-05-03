@@ -62,10 +62,10 @@ export const onRequest: PagesFunction = async (context) => {
 
     // redirect based on country in CF object
     const countryMap = {
-      DE: "https://www.schmidbauer.cz/de",
-      AT: "https://www.schmidbauer.cz/de",
-      CH: "https://www.schmidbauer.cz/de",
-      CZ: "https://www.schmidbauer.cz/cz",
+      DE: "/de",
+      AT: "/de",
+      CH: "/de",
+      CZ: "/cz",
     };
 
     // block based on country in CF object
@@ -83,7 +83,7 @@ export const onRequest: PagesFunction = async (context) => {
 
     if (country != null && country in countryMap && pathname === "/en/") {
       const url = countryMap[country];
-      return Response.redirect(url);
+      return Response.redirect(request.url.hostname + url);
     }
 
   // .. or return a response
