@@ -11,6 +11,13 @@ export const onRequestOptions: PagesFunction = async () => {
   });
 };
 
+
+export const logRequest() {
+      const clientIP = request.headers.get('CF-Connecting-IP');
+      const output = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
+      await env.VIEWS.put(`"view-${now}"`, output);
+}
+
 export async function fetchData(url: string): Promise<string> {
   const response = await fetch(url);
   if (!response.ok) {
@@ -25,6 +32,8 @@ export const onRequest: PagesFunction = async (context) => {
   const request = await context.request;
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Max-Age', '86400');
+
+  logRequest();
 
     // MTA-STS handling
     const url = new URL(request.url);
