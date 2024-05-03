@@ -49,6 +49,11 @@ export const onRequest: PagesFunction = async (context) => {
     });
   }
 
+  // Use the cf object to obtain the country of the request
+  // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
+  // block based on country in CF object
+  const countryBlockList = ['CN'];
+
   // redirect based on country in CF object
   const countryMap = {
     DE: "/de",
@@ -57,11 +62,6 @@ export const onRequest: PagesFunction = async (context) => {
     CZ: "/cz",
   };
 
-  // block based on country in CF object
-  const countryBlockList = ['CN'];
-
-  // Use the cf object to obtain the country of the request
-  // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
   const country = request.cf.country;
   const clientHost = request.headers.get('Host');
 
