@@ -11,13 +11,16 @@ export const onRequestOptions: PagesFunction = async () => {
   });
 };
 
-export async function fetchData(url: string): Promise<string> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error('an error occurred: ' + response.statusText);
-  }
-  return await response.json();
+
+interface Env {
+  VIEWS: KVNamespace;
 }
+
+export const logRequest: PagesFunction = async () => {
+      const clientIP = request.headers.get('CF-Connecting-IP');
+      const output = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
+      await env.VIEWS.put(`"view-${now}"`, output);
+};
 
 // Set CORS to all responses
 export const onRequest: PagesFunction = async (context) => {
@@ -25,6 +28,8 @@ export const onRequest: PagesFunction = async (context) => {
   const request = await context.request;
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Max-Age', '86400');
+
+  logRequest();
 
     // MTA-STS handling
     const url = new URL(request.url);
@@ -45,14 +50,12 @@ export const onRequest: PagesFunction = async (context) => {
       });
     }
 
-    fetchData("https://red-brook-2a68.schmidbauer.workers.dev");
-
     // redirect based on country in CF object
     const countryMap = {
-      DE: "https://www.schmidbauer.cz/de/",
-      AT: "https://www.schmidbauer.cz/de/",
-      CH: "https://www.schmidbauer.cz/de/",
-      CZ: "https://www.schmidbauer.cz/cz/",
+      DE: "/de",
+      AT: "/de",
+      CH: "/de",
+      CZ: "/cz",
     };
 
     // block based on country in CF object
@@ -61,6 +64,7 @@ export const onRequest: PagesFunction = async (context) => {
     // Use the cf object to obtain the country of the request
     // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
     const country = request.cf.country;
+    const clientHost = request.headers.get('Host');
 
     if (country != null && country in countryBlockList) {
       return new Response(null, {
@@ -70,7 +74,7 @@ export const onRequest: PagesFunction = async (context) => {
 
     if (country != null && country in countryMap && pathname === "/en/") {
       const url = countryMap[country];
-      return Response.redirect(url);
+      return Response.redirect("https://" + clientHost + url);
     }
 
   // .. or return a response
