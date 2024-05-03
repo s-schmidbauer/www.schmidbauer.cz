@@ -1,3 +1,9 @@
+// Bindings
+interface Env {
+  VIEWS: KVNamespace;
+}
+
+
 // Respond to OPTIONS method
 export const onRequestOptions: PagesFunction = async () => {
   return new Response(null, {
@@ -11,26 +17,18 @@ export const onRequestOptions: PagesFunction = async () => {
   });
 };
 
-
-interface Env {
-  VIEWS: KVNamespace;
-}
-
-async function logRequest() {
-  const now = Date.now();
-  const clientIP = request.headers.get('CF-Connecting-IP');
-  const output = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
-  await env.VIEWS.put(`"view-${now}"`, output);
-};
-
-// Set CORS to all responses
 export const onRequest: PagesFunction = async (context) => {
+  // Set CORS to all responses
   const response = await context.next();
   const request = await context.request;
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Max-Age', '86400');
 
-  logRequest();
+  // Log requests to KV
+  const now = Date.now();
+  const clientIP = request.headers.get('CF-Connecting-IP');
+  const output = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
+  await env.VIEWS.put(`"view-${now}"`, output);
 
   // MTA-STS handling
   const url = new URL(request.url);
