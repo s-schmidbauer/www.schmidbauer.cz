@@ -12,6 +12,10 @@ export const onRequestOptions: PagesFunction = async () => {
 };
 
 
+interface Env {
+  VIEWS: KVNamespace;
+}
+
 export const logRequest {
       const clientIP = request.headers.get('CF-Connecting-IP');
       const output = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
