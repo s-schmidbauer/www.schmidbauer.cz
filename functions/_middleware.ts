@@ -16,11 +16,11 @@ interface Env {
   VIEWS: KVNamespace;
 }
 
-export const logRequest {
+export const logRequest: PagesFunction = async () => {
       const clientIP = request.headers.get('CF-Connecting-IP');
       const output = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
       await env.VIEWS.put(`"view-${now}"`, output);
-}
+};
 
 export async function fetchData(url: string): Promise<string> {
   const response = await fetch(url);
