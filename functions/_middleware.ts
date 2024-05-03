@@ -22,14 +22,6 @@ export const logRequest: PagesFunction = async () => {
       await env.VIEWS.put(`"view-${now}"`, output);
 };
 
-export async function fetchData(url: string): Promise<string> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error('an error occurred: ' + response.statusText);
-  }
-  return await response.json();
-}
-
 // Set CORS to all responses
 export const onRequest: PagesFunction = async (context) => {
   const response = await context.next();
@@ -58,8 +50,6 @@ export const onRequest: PagesFunction = async (context) => {
       });
     }
 
-    fetchData("https://red-brook-2a68.schmidbauer.workers.dev");
-
     // redirect based on country in CF object
     const countryMap = {
       DE: "/de",
@@ -74,6 +64,7 @@ export const onRequest: PagesFunction = async (context) => {
     // Use the cf object to obtain the country of the request
     // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
     const country = request.cf.country;
+    const clientHost = request.headers.get('Host');
 
     if (country != null && country in countryBlockList) {
       return new Response(null, {
@@ -83,7 +74,7 @@ export const onRequest: PagesFunction = async (context) => {
 
     if (country != null && country in countryMap && pathname === "/en/") {
       const url = countryMap[country];
-      return Response.redirect(request.url.hostname + url);
+      return Response.redirect("https://" + clientHost + url);
     }
 
   // .. or return a response
