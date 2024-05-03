@@ -77,11 +77,9 @@ export const onRequest: PagesFunction = async (context) => {
       });
     }
 
-    if (country != null && country in countryMap) {
+    if (country != null && country in countryMap && pathname != "/en") {
       const url = countryMap[country];
-      if (pathname != url) {
-        return Response.redirect(request.url + url);
-      }
+      return Response.redirect(request.url + url);
     }
 
   // .. or return a response
