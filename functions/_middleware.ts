@@ -30,17 +30,17 @@ export const onRequest: PagesFunction = async (context) => {
   const logOutput = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
   await context.env.VIEWS.put(`view-${now}`, logOutput);
 
-  // MTA-STS handling
   const url = new URL(request.url);
-  const { pathname, search } = url;
-  const mtaVersion = "STSv1";
-  const mtaMode = "testing";
-  const mtaMX1 = "mail1.schmidbauer.cz"
-  const mtaMX2 = "mail2.schmidbauer.cz"
-  const mtaMaxAge = 604800
-  const mtasts = `version: ${mtaVersion}\nmode: ${mtaMode}\nmx: ${mtaMX1}\nmx: ${mtaMX2}\nmax_age: ${mtaMaxAge}\n`;
 
+  // MTA-STS handling
   if (pathname === "/.well-known/mta-sts.txt") {
+    const { pathname, search } = url;
+    const mtaVersion = "STSv1";
+    const mtaMode = "testing";
+    const mtaMX1 = "mail1.schmidbauer.cz"
+    const mtaMX2 = "mail2.schmidbauer.cz"
+    const mtaMaxAge = 604800
+    const mtasts = `version: ${mtaVersion}\nmode: ${mtaMode}\nmx: ${mtaMX1}\nmx: ${mtaMX2}\nmax_age: ${mtaMaxAge}\n`;
     return new Response(mtasts, {
       status: 200,
       headers: {
