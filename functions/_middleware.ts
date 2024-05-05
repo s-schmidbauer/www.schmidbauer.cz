@@ -28,7 +28,7 @@ export const onRequest: PagesFunction = async (context) => {
   const now = Date.now();
   const clientIP = request.headers.get('CF-Connecting-IP');
   const logOutput = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
-  await context.env.VIEWS.put(`"view-${now}"`, logOutput);
+  await context.env.VIEWS.put(`view-${now}`, logOutput);
 
   // MTA-STS handling
   const url = new URL(request.url);
@@ -49,6 +49,11 @@ export const onRequest: PagesFunction = async (context) => {
     });
   }
 
+  // Use the cf object to obtain the country of the request
+  // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
+  // block based on country in CF object
+  const countryBlockList = ['CN','HK'];
+
   // redirect based on country in CF object
   const countryMap = {
     DE: "/de",
@@ -57,11 +62,6 @@ export const onRequest: PagesFunction = async (context) => {
     CZ: "/cz",
   };
 
-  // block based on country in CF object
-  const countryBlockList = ['CN'];
-
-  // Use the cf object to obtain the country of the request
-  // more on the cf object: https://developers.cloudflare.com/workers/runtime-apis/request#incomingrequestcfproperties
   const country = request.cf.country;
   const clientHost = request.headers.get('Host');
 
