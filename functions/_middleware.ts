@@ -25,10 +25,10 @@ export const onRequest: PagesFunction = async (context) => {
   response.headers.set('Access-Control-Max-Age', '86400');
 
   // Log requests to KV
-  const now = Date.now();
-  const clientIP = request.headers.get('CF-Connecting-IP');
-  const logOutput = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
-  await context.env.VIEWS.put(`view-${now}`, logOutput);
+//  const now = Date.now();
+//  const clientIP = request.headers.get('CF-Connecting-IP');
+//  const logOutput = `{ "time": "${now}", "clientIP": "${clientIP}", "asn": "${request.cf.asn}", "country": "${request.cf.country}", "region": "${request.cf.region}", "city": "${request.cf.city}", "tlsCipher": "${request.cf.tlsCipher}", "tlsVersion": "${request.cf.tlsVersion}" }`;
+//  await context.env.VIEWS.put(`view-${now}`, logOutput);
 
   const url = new URL(request.url);
   const { pathname, search } = url;
