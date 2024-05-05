@@ -31,10 +31,10 @@ export const onRequest: PagesFunction = async (context) => {
   await context.env.VIEWS.put(`view-${now}`, logOutput);
 
   const url = new URL(request.url);
+  const { pathname, search } = url;
 
   // MTA-STS handling
   if (pathname === "/.well-known/mta-sts.txt") {
-    const { pathname, search } = url;
     const mtaVersion = "STSv1";
     const mtaMode = "testing";
     const mtaMX1 = "mail1.schmidbauer.cz"
