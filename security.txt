@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+#
+# schmidbauer.cz RFC 9116 security.txt
+#
+# 
+Canonical: https://schmidbauer.cz/.well-known/security.txt
+Canonical: https://www.schmidbauer.cz/.well-known/security.txt
+
+Expires: 14-10-2025T12:01:00+00:00
+
+# Please always try to contact us through our online form to speed up things.
+Contact: https://www.schmidbauer.cz/en/#contact
+
+# We can offer a proper response in the following languages:
+Preferred-Languages: de, en
+
+#
+# Thank you!
+#
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEpWm9ly6EA+40uKD9zbTSMDmbC0UFAmcM7GgACgkQzbTSMDmb
+C0UV+g/7BEK6wty72STixGqUF/Tz9rr65EOVi19hpLyN4OYw/FNAlrALKixPqeid
+Ad7QvuxeGmpXleokMqh/p11PuYyyzc6AVKIPCgBONBT6+T+BJYu4odlKqIrXHcx+
+jVdO57PI0dbJWw4rcXtlwyLD7DD1X/eA0WDjPlCMByxlxPA8bKufsQLhPUScn38s
+pCdjJrCjTg8+u8aqDcfZhbatSGik4TwatAGsguH8z0opeue4EBe4Xpg/cGN7hLxh
+vndV2q+o7eeMuee3PAaDKNK6yhw0ShGzUGmWTGmsCS2TDYtrJ59lwpiqgU64ugwt
+j1ji/zgV3szqTft8Yj204w2nICdl9yIevPCpaD9BxGzH4ByiOqHNsZ+PNS4Vg0oc
+lz5aemUrQmhLuM3mWE6FlyEoAVJw2L0FpqWTkT6KoNCtfoHbc3GJ66JBenyEM473
+558MnP8DcR89dfVoER0X21XWK8VSQxKZoWsUzBNBVWYwBaGx2vj+4f1d2ix0trs5
+li5vEKjA6zNI8l9qXQuMjxV9NrbLQ6Wod0jKN060UuS0UFvZYDu3bWIkf8yyMKKS
+IqdPgk/I+wRsTi78ESLYUxEovrboCjG1psWRotIqUIVCtmON4DxLSiCc1EMKsTms
+hhiB+xKuAnls7QMgbREUwTIo/5j+tUwTydfG30/hPaS7rRKScUA=
+=lAtr
+-----END PGP SIGNATURE-----
